@@ -6,14 +6,14 @@ export function activate(context: vscode.ExtensionContext) {
 
   let timeout: NodeJS.Timeout | undefined = undefined;
 
-  const decorations: Map<
+  const decorations = new Map<
     string,
     {
       decoration: vscode.TextEditorDecorationType;
       ranges: vscode.Range[];
       hoverMessage: string;
     }
-  > = new Map();
+  >();
 
   decorations.set("m", {
     decoration: vscode.window.createTextEditorDecorationType({
@@ -52,6 +52,146 @@ export function activate(context: vscode.ExtensionContext) {
     hoverMessage: "gate",
   });
 
+  decorations.set("k", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      borderColor: "rgb(105, 85, 255)",
+      borderStyle: "dashed",
+      borderWidth: "1px",
+      backgroundColor: "rgba(30, 0, 255, 0.4)",
+    }),
+    ranges: [],
+    hoverMessage: "key",
+  });
+
+  decorations.set("p", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      borderColor: "yellow",
+      borderStyle: "dashed",
+      borderWidth: "1px",
+      backgroundColor: "rgba(255, 255, 0, 0.4)",
+    }),
+    ranges: [],
+    hoverMessage: "potion",
+  });
+
+  decorations.set("e", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      borderColor: "rgb(0, 255, 200)",
+      borderStyle: "dashed",
+      borderWidth: "1px",
+      backgroundColor: "rgba(0, 255, 200, 0.4)",
+    }),
+    ranges: [],
+    hoverMessage: "elixir",
+  });
+
+  decorations.set("al", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      borderColor: "magenta",
+      borderStyle: "solid",
+      borderWidth: "1px",
+      backgroundColor: "rgba(255, 0, 225, 0.4)",
+    }),
+    ranges: [],
+    hoverMessage: "altar",
+  });
+
+  decorations.set("d", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      borderColor: "rgb(0, 215, 0)",
+      borderStyle: "solid",
+      borderWidth: "1px",
+      backgroundColor: "rgba(0, 215, 0, 0.4)",
+    }),
+    ranges: [],
+    hoverMessage: "door",
+  });
+
+  decorations.set("c", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; text-shadow: rgb(0, 200, 255) 0 0 5px",
+    }),
+    ranges: [],
+    hoverMessage: "crystal sword",
+  });
+
+  decorations.set("a", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; text-shadow: rgb(180, 180, 180) 0 0 5px",
+    }),
+    ranges: [],
+    hoverMessage: "axe",
+  });
+
+  decorations.set("r", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; text-shadow: rgb(255, 205, 0) 0 0 5px",
+    }),
+    ranges: [],
+    hoverMessage: "ring of annhihilation",
+  });
+
+  decorations.set("ko", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; color: rgb(255, 0, 0)",
+    }),
+    ranges: [],
+    hoverMessage: "kobold",
+  });
+
+  decorations.set("go", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; color: rgb(225, 0, 0)",
+    }),
+    ranges: [],
+    hoverMessage: "goblin",
+  });
+
+  decorations.set("oc", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; color: rgb(205, 0, 0)",
+    }),
+    ranges: [],
+    hoverMessage: "orc",
+  });
+
+  decorations.set("og", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; color: rgb(185, 0, 0)",
+    }),
+    ranges: [],
+    hoverMessage: "ogre",
+  });
+
+  decorations.set("tr", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; color: rgb(165, 0, 0)",
+    }),
+    ranges: [],
+    hoverMessage: "troll",
+  });
+
+  decorations.set("dr", {
+    decoration: vscode.window.createTextEditorDecorationType({
+      textDecoration: "display: none; color: rgb(145, 0, 0)",
+    }),
+    ranges: [],
+    hoverMessage: "dragon",
+  });
+
+  // Monsters
+
+  // decorations.set("go", {
+  //   decoration: vscode.window.createTextEditorDecorationType({
+  //     borderColor: "rgb(255, 157, 0)",
+  //     borderStyle: "solid",
+  //     borderWidth: "1px",
+  //     backgroundColor: "rgba(0, 215, 0, 0.4)",
+  //   }),
+  //   ranges: [],
+  //   hoverMessage: "goblin",
+  // });
+
   let activeEditor = vscode.window.activeTextEditor;
 
   function updateDecorations() {
@@ -67,7 +207,6 @@ export function activate(context: vscode.ExtensionContext) {
 
     let match;
     while ((match = regEx.exec(text))) {
-      console.log(match[0]);
       const startPos = activeEditor.document.positionAt(match.index);
       const endPos = activeEditor.document.positionAt(
         match.index + match[0].length
