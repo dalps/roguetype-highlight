@@ -15,182 +15,178 @@ export function activate(context: vscode.ExtensionContext) {
     }
   >();
 
-  decorations.set("m", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  function setDecoration(
+    key: string,
+    decoration: vscode.DecorationRenderOptions,
+    hoverMessage: string
+  ) {
+    decorations.set(key, {
+      decoration: vscode.window.createTextEditorDecorationType(decoration),
+      ranges: [],
+      hoverMessage,
+    });
+  }
+
+  setDecoration(
+    "m",
+    {
       backgroundColor: "rgba(102, 102, 102, 0.75)",
-    }),
-    ranges: [],
-    hoverMessage: "mountain",
-  });
+    },
+    "mountain"
+  );
 
-  decorations.set("t", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "t",
+    {
       backgroundColor: "rgba(0, 199, 36, 0.75)",
-    }),
-    ranges: [],
-    hoverMessage: "forest",
-  });
+    },
+    "forest"
+  );
 
-  decorations.set("f", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "f",
+    {
       opacity: "0.3",
-      // textDecoration: "display: none; opacity: 0.5",
-      backgroundColor: "rgba(255, 255, 255, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "floor",
-  });
+    },
+    "free"
+  );
 
-  decorations.set("g", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "g",
+    {
       borderColor: "red",
-      borderStyle: "solid",
+      borderStyle: "dashed",
       borderWidth: "1px",
       backgroundColor: "rgba(255, 0, 0, 0.4)",
-    }),
-    ranges: [],
-    hoverMessage: "gate",
-  });
+    },
+    "gate"
+  );
 
-  decorations.set("k", {
-    decoration: vscode.window.createTextEditorDecorationType({
-      borderColor: "rgb(105, 85, 255)",
+  setDecoration(
+    "d",
+    {
+      borderColor: "rgb(0, 255, 0)",
       borderStyle: "dashed",
       borderWidth: "1px",
-      backgroundColor: "rgba(30, 0, 255, 0.4)",
-    }),
-    ranges: [],
-    hoverMessage: "key",
-  });
+      backgroundColor: "rgba(0, 255, 0, 0.4)",
+    },
+    "door"
+  );
 
-  decorations.set("p", {
-    decoration: vscode.window.createTextEditorDecorationType({
-      borderColor: "yellow",
-      borderStyle: "dashed",
-      borderWidth: "1px",
-      backgroundColor: "rgba(255, 255, 0, 0.4)",
-    }),
-    ranges: [],
-    hoverMessage: "potion",
-  });
-
-  decorations.set("e", {
-    decoration: vscode.window.createTextEditorDecorationType({
-      borderColor: "rgb(0, 255, 200)",
-      borderStyle: "dashed",
-      borderWidth: "1px",
-      backgroundColor: "rgba(0, 255, 200, 0.4)",
-    }),
-    ranges: [],
-    hoverMessage: "elixir",
-  });
-
-  decorations.set("al", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "al",
+    {
       borderColor: "magenta",
-      borderStyle: "solid",
+      borderStyle: "dashed",
       borderWidth: "1px",
       backgroundColor: "rgba(255, 0, 225, 0.4)",
-    }),
-    ranges: [],
-    hoverMessage: "altar",
-  });
+    },
+    "altar"
+  );
 
-  decorations.set("d", {
-    decoration: vscode.window.createTextEditorDecorationType({
-      borderColor: "rgb(0, 215, 0)",
-      borderStyle: "solid",
-      borderWidth: "1px",
-      backgroundColor: "rgba(0, 215, 0, 0.4)",
-    }),
-    ranges: [],
-    hoverMessage: "door",
-  });
-
-  decorations.set("c", {
-    decoration: vscode.window.createTextEditorDecorationType({
-      textDecoration: "display: none; text-shadow: rgb(0, 200, 255) 0 0 5px",
-    }),
-    ranges: [],
-    hoverMessage: "crystal sword",
-  });
-
-  decorations.set("a", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "a",
+    {
       textDecoration: "display: none; text-shadow: rgb(180, 180, 180) 0 0 5px",
-    }),
-    ranges: [],
-    hoverMessage: "axe",
-  });
+    },
+    "axe"
+  );
 
-  decorations.set("r", {
-    decoration: vscode.window.createTextEditorDecorationType({
-      textDecoration: "display: none; text-shadow: rgb(255, 205, 0) 0 0 5px",
-    }),
-    ranges: [],
-    hoverMessage: "ring of annhihilation",
-  });
+  setDecoration(
+    "k",
+    {
+      textDecoration: "display: none; text-shadow: rgb(85, 161, 255) 0 0 5px",
+    },
+    "key"
+  );
 
-  decorations.set("ko", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "p",
+    {
+      textDecoration: "display: none; text-shadow: rgb(0, 255, 26) 0 0 5px",
+    },
+    "potion"
+  );
+
+  setDecoration(
+    "e",
+    {
+      textDecoration: "display: none; text-shadow: rgb(0, 255, 170) 0 0 5px",
+    },
+    "elixir"
+  );
+
+  setDecoration(
+    "s",
+    {
+      textDecoration: "display: none; text-shadow: rgb(255, 0, 251) 0 0 5px",
+    },
+    "mithril sword"
+  );
+
+  setDecoration(
+    "c",
+    {
+      textDecoration: "display: none; text-shadow: rgb(0, 200, 255) 0 0 5px",
+    },
+    "cristal sword"
+  );
+
+  setDecoration(
+    "r",
+    {
+      textDecoration: "display: none; text-shadow: rgb(255, 191, 0) 0 0 5px",
+    },
+    "ring of annhihilation"
+  );
+
+  setDecoration(
+    "ko",
+    {
       textDecoration: "display: none; color: rgb(255, 0, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "kobold",
-  });
+    },
+    "kobold"
+  );
 
-  decorations.set("go", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "go",
+    {
       textDecoration: "display: none; color: rgb(225, 0, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "goblin",
-  });
+    },
+    "goblin"
+  );
 
-  decorations.set("oc", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "oc",
+    {
       textDecoration: "display: none; color: rgb(205, 0, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "orc",
-  });
+    },
+    "orc"
+  );
 
-  decorations.set("og", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "og",
+    {
       textDecoration: "display: none; color: rgb(185, 0, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "ogre",
-  });
+    },
+    "ogre"
+  );
 
-  decorations.set("tr", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "tr",
+    {
       textDecoration: "display: none; color: rgb(165, 0, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "troll",
-  });
+    },
+    "troll"
+  );
 
-  decorations.set("dr", {
-    decoration: vscode.window.createTextEditorDecorationType({
+  setDecoration(
+    "dr",
+    {
       textDecoration: "display: none; color: rgb(145, 0, 0)",
-    }),
-    ranges: [],
-    hoverMessage: "dragon",
-  });
-
-  // Monsters
-
-  // decorations.set("go", {
-  //   decoration: vscode.window.createTextEditorDecorationType({
-  //     borderColor: "rgb(255, 157, 0)",
-  //     borderStyle: "solid",
-  //     borderWidth: "1px",
-  //     backgroundColor: "rgba(0, 215, 0, 0.4)",
-  //   }),
-  //   ranges: [],
-  //   hoverMessage: "goblin",
-  // });
+    },
+    "dragon"
+  );
 
   let activeEditor = vscode.window.activeTextEditor;
 

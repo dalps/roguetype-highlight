@@ -1,48 +1,38 @@
 {
-	"name": "decorator-sample",
-	"description": "Sample for the decorator API",
-	"version": "0.0.1",
-	"publisher": "vscode-samples",
-	"license": "MIT",
-	"engines": {
-		"vscode": "^1.73.0"
-	},
-	"repository": {
-		"url": "https://github.com/Microsoft/vscode-extension-samples"
-	},
-	"categories": [
-		"Other"
-	],
-	"activationEvents": [
-		"*"
-	],
-	"main": "./out/extension.js",
-	"contributes": {
-		"colors": [
-			{
-				"id": "myextension.largeNumberBackground",
-				"description": "Background decoration color for large numbers",
-				"defaults": {
-					"dark": "#FF000055",
-					"light": "#FF000055",
-					"highContrast": "#FF000055"
-				}
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "npm run compile",
-		"compile": "tsc -p ./",
-		"lint": "eslint",
-		"watch": "tsc -watch -p ./"
-	},
-	"devDependencies": {
-		"@eslint/js": "^9.13.0",
-		"@stylistic/eslint-plugin": "^2.9.0",
-		"@types/node": "^20",
-		"@types/vscode": "^1.73.0",
-		"eslint": "^9.13.0",
-		"typescript": "^5.8.2",
-		"typescript-eslint": "^8.26.0"
-	}
+  "name": "roguetype-highlight",
+  "description": "Highlight the maps of Roguetype's levels for a cosier playthrough.",
+  "version": "0.0.1",
+  "publisher": "dalps",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "repository": {
+    "url": "https://github.com/dalps/roguetype-highlight"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:ocaml"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "colors": []
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/node": "^20",
+    "@types/vscode": "^1.73.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  }
 }
