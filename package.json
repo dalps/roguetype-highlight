@@ -1,6 +1,6 @@
 {
   "name": "roguetype-highlight",
-  "description": "Highlight the maps of Roguetype's levels for a cosier playthrough.",
+  "description": "Highlight the world types of Roguetype for a cosier adventure.",
   "version": "0.0.1",
   "publisher": "dalps",
   "license": "MIT",
@@ -26,7 +26,6 @@
           "light": "#666666bf",
           "dark": "#666666bf"
         }
-        
       },
       {
         "id": "roguetypeHighlight.forest",
@@ -83,8 +82,55 @@
           "light": "#ff00e1",
           "dark": "#ff00e1"
         }
+      },
+      {
+        "id": "roguetypeHighlight.kobold",
+        "description": "Text color for kobold",
+        "defaults": {
+          "light": "#ff4500",
+          "dark": "#ff4500"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.goblin",
+        "description": "Text color for goblin",
+        "defaults": {
+          "light": "#ea3a15",
+          "dark": "#ea3a15"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.orc",
+        "description": "Text color for orc",
+        "defaults": {
+          "light": "#d52e2b",
+          "dark": "#d52e2b"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.ogre",
+        "description": "Text color for ogre",
+        "defaults": {
+          "light": "#c02240",
+          "dark": "#c02240"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.troll",
+        "description": "Text color for troll",
+        "defaults": {
+          "light": "#aa1755",
+          "dark": "#aa1755"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.dragon",
+        "description": "Text color for dragon",
+        "defaults": {
+          "light": "#950b6b",
+          "dark": "#950b6b"
+        }
       }
-      
     ]
   },
   "scripts": {

@@ -6,19 +6,26 @@
 
 This vscode extension highlights the world types of the wonderful [Roguetype](https://github.com/Octachron/roguetype) typing adventure.
 
+### Usage
+
 After installing, just open the file `game.ml` of the game's code in a new editor and you should see the rows of the world types decorated as follows:
 
 - free cells dimmed out
-- obstacles, gates, doors and altar over colorful backgrounds
+- obstacles, gates, doors and altar on top of colorful backgrounds
 - monsters in various shades of red
 - glowy pickable items
 
-You can change the default colors by setting them the `workbench.colorCustomization` in the settings JSON:
+> [!TIP]
+> It is highly recommended to vertically align the rows parameters with the Align by RegEx extension (`janjoerke.align-by-regex`) to get a nicely formatted grid.
+
+### Settings
+
+If you don't like the default colors, you can customize (most of) them under the `workbench.colorCustomization` property in your `settings.json` file, like this:
 
 ```
-"workbench.colorCustomization" : {
-  ...
-}
+"workbench.colorCustomizations": {
+    "roguetypeHighlight.mountain": "#6666"
+},
 ```
 
-Happy typing
+Happy typing!

@@ -135,6 +135,10 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "r",
     {
+      // before: {
+      //   contentText: "💍",
+      // },
+      // textDecoration: "display: none",
       textDecoration: "display: none; text-shadow: rgb(255, 191, 0) 0 0 5px",
     },
     "ring of annhihilation"
@@ -143,49 +147,50 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "ko",
     {
-      textDecoration: "display: none; color: rgb(255, 0, 0)",
+      color: { id: "roguetypeHighlight.kobold" },
     },
-    "kobold"
+    "kobold (1 health)"
   );
 
   setDecoration(
     "go",
     {
-      textDecoration: "display: none; color: rgb(225, 0, 0)",
+      color: { id: "roguetypeHighlight.goblin" },
     },
-    "goblin"
+    "goblin (2 health)"
   );
 
   setDecoration(
     "oc",
     {
-      textDecoration: "display: none; color: rgb(205, 0, 0)",
+      color: { id: "roguetypeHighlight.orc" },
     },
-    "orc"
+    "orc (4 health)"
   );
 
   setDecoration(
     "og",
     {
-      textDecoration: "display: none; color: rgb(185, 0, 0)",
+      color: { id: "roguetypeHighlight.ogre" },
     },
-    "ogre"
+    "ogre (6 health)"
   );
 
   setDecoration(
     "tr",
     {
-      textDecoration: "display: none; color: rgb(165, 0, 0)",
+      color: { id: "roguetypeHighlight.troll" },
     },
-    "troll"
+
+    "troll (8 health)"
   );
 
   setDecoration(
     "dr",
     {
-      textDecoration: "display: none; color: rgb(145, 0, 0)",
+      color: { id: "roguetypeHighlight.dragon" },
     },
-    "dragon"
+    "dragon (256 health)"
   );
 
   let activeEditor = vscode.window.activeTextEditor;
