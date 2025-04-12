@@ -9,8 +9,16 @@ This vscode extension highlights the world types of the wonderful [Roguetype](ht
 After installing, just open the file `game.ml` of the game's code in a new editor and you should see the rows of the world types decorated as follows:
 
 - free cells dimmed out
-- obstacles, gates, doors and altar over colorful backgrounds 
+- obstacles, gates, doors and altar over colorful backgrounds
 - monsters in various shades of red
 - glowy pickable items
+
+You can change the default colors by setting them the `workbench.colorCustomization` in the settings JSON:
+
+```
+"workbench.colorCustomization" : {
+  ...
+}
+```
 
 Happy typing

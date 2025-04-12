@@ -18,7 +18,74 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
-    "colors": []
+    "colors": [
+      {
+        "id": "roguetypeHighlight.mountain",
+        "description": "Background color for mountains",
+        "defaults": {
+          "light": "#666666bf",
+          "dark": "#666666bf"
+        }
+        
+      },
+      {
+        "id": "roguetypeHighlight.forest",
+        "description": "Background color for forest",
+        "defaults": {
+          "light": "#00c724bf",
+          "dark": "#00c724bf"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.gateBg",
+        "description": "Background color for gate",
+        "defaults": {
+          "light": "#ff000066",
+          "dark": "#ff000066"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.gateBorder",
+        "description": "Border color for gate",
+        "defaults": {
+          "light": "#ff0000",
+          "dark": "#ff0000"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.doorBg",
+        "description": "Background color for doors",
+        "defaults": {
+          "light": "#00ff0066",
+          "dark": "#00ff0066"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.doorBorder",
+        "description": "Border color for doors",
+        "defaults": {
+          "light": "#00ff00",
+          "dark": "#00ff00"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.altarBg",
+        "description": "Background color for altar",
+        "defaults": {
+          "light": "#ff00e166",
+          "dark": "#ff00e166"
+        }
+      },
+      {
+        "id": "roguetypeHighlight.altarBorder",
+        "description": "Border color for altar",
+        "defaults": {
+          "light": "#ff00e1",
+          "dark": "#ff00e1"
+        }
+      }
+      
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

@@ -30,7 +30,7 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "m",
     {
-      backgroundColor: "rgba(102, 102, 102, 0.75)",
+      backgroundColor: { id: "roguetypeHighlight.mountain" },
     },
     "mountain"
   );
@@ -38,7 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "t",
     {
-      backgroundColor: "rgba(0, 199, 36, 0.75)",
+      backgroundColor: { id: "roguetypeHighlight.forest" },
     },
     "forest"
   );
@@ -54,10 +54,10 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "g",
     {
-      borderColor: "red",
+      borderColor: { id: "roguetypeHighlight.gateBorder" },
       borderStyle: "dashed",
       borderWidth: "1px",
-      backgroundColor: "rgba(255, 0, 0, 0.4)",
+      backgroundColor: { id: "roguetypeHighlight.gateBg" },
     },
     "gate"
   );
@@ -65,10 +65,10 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "d",
     {
-      borderColor: "rgb(0, 255, 0)",
+      borderColor: { id: "roguetypeHighlight.doorBorder" },
       borderStyle: "dashed",
       borderWidth: "1px",
-      backgroundColor: "rgba(0, 255, 0, 0.4)",
+      backgroundColor: { id: "roguetypeHighlight.doorBg" },
     },
     "door"
   );
@@ -76,10 +76,10 @@ export function activate(context: vscode.ExtensionContext) {
   setDecoration(
     "al",
     {
-      borderColor: "magenta",
+      borderColor: { id: "roguetypeHighlight.altarBorder" },
       borderStyle: "dashed",
       borderWidth: "1px",
-      backgroundColor: "rgba(255, 0, 225, 0.4)",
+      backgroundColor: { id: "roguetypeHighlight.altarBg" },
     },
     "altar"
   );
