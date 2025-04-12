@@ -1,7 +1,7 @@
 {
   "name": "roguetype-highlight",
   "description": "Highlight the world types of Roguetype for a cosier adventure.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "dalps",
   "license": "MIT",
   "engines": {
